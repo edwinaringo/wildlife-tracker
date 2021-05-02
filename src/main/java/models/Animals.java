@@ -1,6 +1,6 @@
 package models;
 import java.util.Objects;
-public class Animals {
+public abstract class Animals {
     public int id;
     public String name;
     public String age;
