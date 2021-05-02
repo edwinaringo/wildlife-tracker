@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Sightings {
     private String animalName;
     private int rangerid;
@@ -27,6 +29,16 @@ public class Sightings {
 
     public String getLocation() {
         return location;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sightings sighting = (Sightings) o;
+        return getAnimalName().equals(sighting.getAnimalName()) &&
+                getRangerid() == sighting.getRangerid()&&
+                Objects.equals(getLocation(), sighting.getLocation());
     }
 }
 
