@@ -25,4 +25,22 @@ class SafeAnimalsTest {
         SafeAnimals safeAnimals = otherAnimal();
         assertTrue(safeAnimals instanceof SafeAnimals);
     }
+
+    @Test
+    public void ageMethod_canGetSafeAnimalsAge_equals(){
+        SafeAnimals safeAnimals = otherAnimal();
+        assertEquals("Old", safeAnimals.getAge());
+    }
+
+    @Test
+    public void nameMethod_canGetSafeAnimalsName_equals(){
+        SafeAnimals safeAnimals = otherAnimal();
+        assertEquals("Lion", safeAnimals.getName());
+    }
+
+    @Test
+    public void healthMethod_canGetSafeAnimalsHealth(){
+        SafeAnimals normalAnimal = otherAnimal();
+        assertEquals("Okay", normalAnimal.getHealth());
+    }
 }
