@@ -57,4 +57,9 @@ public class Animals {
                 Objects.equals(getType(), animal.getType());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, health, age, type);
+    }
+
 }
