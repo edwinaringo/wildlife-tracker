@@ -1,5 +1,5 @@
 package models;
-
+import java.util.Objects;
 public class Animals {
     public int id;
     public String name;
@@ -43,6 +43,18 @@ public class Animals {
 
     public String getType() {
         return type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animals animal = (Animals) o;
+        return  Objects.equals(getName(), animal.getName()) &&
+                Objects.equals(getHealth(), animal.getHealth()) &&
+                Objects.equals(getAge(), animal.getAge()) &&
+                getId() == animal.getId() &&
+                Objects.equals(getType(), animal.getType());
     }
 
 }
