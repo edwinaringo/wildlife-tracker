@@ -17,13 +17,25 @@ class RangerTest {
     }
 
     private Ranger otherRanger(){
-        return new Ranger("Nike",2);
+        return new Ranger("Tyler",2);
     }
 
     @Test
-    public void rangerClass_canInstantiateCorrectly(){
+    public void rangerClass_canInstantiateCorrectly_boolean(){
         Ranger ranger = otherRanger();
         assertTrue(ranger instanceof Ranger);
+    }
+
+    @Test
+    public void getName_canGetRangerName_Tyler(){
+        Ranger ranger = otherRanger();
+        assertEquals("Tyler",ranger.getName());
+    }
+
+    @Test
+    public void getName_canGetRangerId_2(){
+        Ranger ranger = otherRanger();
+        assertEquals(2,ranger.getId());
     }
 
 
