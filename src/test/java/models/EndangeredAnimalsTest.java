@@ -25,4 +25,22 @@ class EndangeredAnimalsTest {
         EndangeredAnimals endangeredAnimals = otherAnimal();
         assertTrue(endangeredAnimals instanceof EndangeredAnimals);
     }
+
+    @Test
+    public void getAge_returnAnimalsAge(){
+        EndangeredAnimals endangeredAnimals = otherAnimal();
+        assertEquals("Adult", endangeredAnimals.getAge());
+    }
+
+    @Test
+    public void getName_returnAnimalsName(){
+        EndangeredAnimals endangeredAnimals = otherAnimal();
+        assertEquals("Mammoth", endangeredAnimals.getName());
+    }
+
+    @Test
+    public void getHealth_returnAnimalsHealth(){
+        EndangeredAnimals endangeredAnimals = otherAnimal();
+        assertEquals("Bad", endangeredAnimals.getHealth());
+    }
 }
