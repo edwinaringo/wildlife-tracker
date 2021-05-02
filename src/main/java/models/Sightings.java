@@ -12,6 +12,22 @@ public class Sightings {
         this.rangerid = rangerid;
         this.id = rangerid;
     }
+
+    public String getAnimalName() {
+        return animalName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getRangerid() {
+        return rangerid;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 }
 
 
