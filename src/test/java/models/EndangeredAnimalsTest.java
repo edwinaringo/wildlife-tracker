@@ -1,5 +1,6 @@
 package models;
 
+import org.junit.Rule;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EndangeredAnimalsTest {
+
+    @Rule
+    public DatabaseRule databaseRule = new DatabaseRule();
+
 
     @BeforeEach
     void setUp() {
