@@ -1,9 +1,6 @@
 package models;
 
 public class EndangeredAnimals extends Animals{
-    private String name;
-    private String health;
-    private String age;
     private static final String DATABASE_TYPE = "Endangered";
 
 // Constructor.

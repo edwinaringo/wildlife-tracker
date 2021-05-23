@@ -17,7 +17,7 @@ class EndangeredAnimalsTest {
     }
 
     private EndangeredAnimals otherAnimal() {
-        return new EndangeredAnimals("Mammoth","Bad","Adult");
+        return new EndangeredAnimals("Mammoth","Adult","Bad");
     }
 
     @Test

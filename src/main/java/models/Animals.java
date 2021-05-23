@@ -68,4 +68,6 @@ public abstract class Animals {
         return Objects.hash(name,health,age,type);
     }
 
+
+
 }
