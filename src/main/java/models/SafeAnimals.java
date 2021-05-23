@@ -1,13 +1,13 @@
 package models;
 
 public class SafeAnimals extends Animals{
-    private static final String DB_TYPE = "Not Endangered";
+    private static final String DATABASE_TYPE = "Safe";
 
     public SafeAnimals(String name, String health, String age) {
         this.name = name;
         this.health = health;
         this.age = age;
-        this.type = DB_TYPE;
+        this.type = DATABASE_TYPE;
     }
 
 }
