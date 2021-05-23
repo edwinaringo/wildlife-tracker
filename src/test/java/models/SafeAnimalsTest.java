@@ -42,7 +42,7 @@ class SafeAnimalsTest {
     }
 
     @Test
-    public void healthMethod_canGetSafeAnimalsHealth(){
+    public void healthMethod_canGetSafeAnimalsHealth_true(){
         SafeAnimals normalAnimal = otherAnimal();
         assertEquals("Okay", normalAnimal.getHealth());
     }

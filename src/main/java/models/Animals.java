@@ -1,4 +1,6 @@
 package models;
+import org.sql2o.*;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Animals {
@@ -66,6 +68,28 @@ public abstract class Animals {
     @Override
     public int hashCode() {
         return Objects.hash(name,health,age,type);
+    }
+
+    public void save(){
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO animals(name, health, age, type) values (:name, :health, :age, :type)";
+            this.id = (int) con.createQuery(sql,true)
+                    .addParameter("name", this.name)
+                    .addParameter("health", this.health)
+                    .addParameter("age", this.age)
+                    .addParameter("type", this.type)
+                    .executeUpdate()
+                    .getKey();
+        }catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    public static List<String> allAnimals() {
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery("SELECT name FROM animals")
+                    .executeAndFetch(String.class);
+        }
     }
 
 

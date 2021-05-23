@@ -30,13 +30,13 @@ class RangerTest {
     }
 
     @Test
-    public void getName_canGetRangerName_Tyler(){
+    public void getName_canGetRangerName_true(){
         Ranger ranger = otherRanger();
         assertEquals("Tyler",ranger.getName());
     }
 
     @Test
-    public void getName_canGetRangerId_2(){
+    public void getName_canGetRangerId_true(){
         Ranger ranger = otherRanger();
         assertEquals(2,ranger.getId());
     }
