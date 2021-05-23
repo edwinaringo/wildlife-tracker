@@ -1,4 +1,3 @@
-package models;
 import static spark.Spark.*;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import spark.ModelAndView;
@@ -19,7 +18,13 @@ public class App {
         }
         port(port);
 
+        get("/",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model,"index.hbs");
+        },new HandlebarsTemplateEngine());
+
     }
+
 }
 
 
