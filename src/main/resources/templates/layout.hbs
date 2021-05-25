@@ -2,7 +2,33 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Parks and Recreation</title>
+        <title>{{#block "title"}}Parks and Recreation{{/block}}</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel='stylesheet' href='/main.css'>
     </head>
+    <body>
+    <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item" active><a class="nav-link" href="/sightings/new">New Sighting</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            View Animals
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item active" href="/animals/endangered">Endangered</a>
+            <a class="dropdown-item active" href="/animals/not-endangered">Not Endangered</a>
+        </div>
+    </li>
+    <li class="nav-item active"><a class="nav-link" href="/sightings">Sightings</a></li>
+    <li class="nav-item active"><a class="nav-link" href="/rangers">Rangers</a></li>
+
+    <div class ="container">
+        <div class="page-header">
+            <h1>Parks and Recreation</h1>
+        </div>
+        <img src="" class="rounded-circle" height="100px";>
+        {{#block "content"}}
+        {{/block}}
+    </div>
+    </body>
     </html>
 {{/block}}

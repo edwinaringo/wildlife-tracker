@@ -1,23 +1,15 @@
-{{#block "header"}}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Parks and Recreation</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='/main.css'>
-</head>
-<body>
-{{/block}}
-</body>
-</html>
+{{#partial "content"}}
+    <div class="container-fluid" id="">
+        <h1>This is Parks and Recreation</h1>
+        <br>
+        <h2>Protect our parks.</h2>
+        <p>Record a sighting whenever you spot an animal in any side of our beautiful park.</p>
+        <div class="row" id="bSite">
+            <div class="col-md-6">
+                <a href="/sightings/new" style="color:White"; class="btn btn-outline-success btn-lg">Record a Sighting</a>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
+{{/partial}}
+{{>layout.hbs}}
