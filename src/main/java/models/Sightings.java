@@ -65,10 +65,10 @@ public class Sightings {
     }
 
     public void save() {
-        String sql = "INSERT INTO sightings(animalname, loction, timestamp, rangerid) values (:animalname, :location, :timestamp, :rangerid)";
+        String sql = "INSERT INTO sightings(animalname, location, timestamp, rangerid) values (:animalname, :location, :timestamp, :rangerid)";
         try(Connection con = DB.sql2o.open()) {
             this.id = (int) con.createQuery(sql,true)
-                    .addParameter("animalName",this.animalName)
+                    .addParameter("animalname",this.animalName)
                     .addParameter("location",this.location)
                     .addParameter("timestamp",this.timestamp)
                     .addParameter("rangerid",this.rangerid)
@@ -93,6 +93,14 @@ public class Sightings {
         }
     }
 
+    public static List<Sightings> getSightingsInLocation(String locationFilter){
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery("SELECT * FROM sightings where location = :location")
+                    .addParameter("location",locationFilter)
+                    .executeAndFetch(Sightings.class);
+        }
+    }
+
     public static Sightings find(int searchId) {
         try(Connection con = DB.sql2o.open()){
             return con.createQuery("SELECT * FROM sightings WHERE id =:id")
@@ -105,6 +113,14 @@ public class Sightings {
     public String getRangerName() {
         return Ranger.find(rangerid).getName();
     }
+
+    public static List<Sightings> all(){
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery("SELECT * FROM sightings")
+                    .executeAndFetch(Sightings.class);
+        }
+    }
+
 
 
 }

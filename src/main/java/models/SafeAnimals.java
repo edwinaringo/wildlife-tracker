@@ -15,20 +15,7 @@ public class SafeAnimals extends Animals{
         this.type = DATABASE_TYPE;
     }
 
-    public void save() {
-        try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals(name, health, age, type) values (:name, :health, :age. :type)";
-            this.id = (int) con.createQuery(sql,true)
-                    .addParameter("name", this.name)
-                    .addParameter("health", this.health)
-                    .addParameter("age", this.age)
-                    .addParameter("type", this.type)
-                    .executeUpdate()
-                    .getKey();
-        }catch (Sql2oException ex) {
-            System.out.println(ex);
-        }
-    }
+
 
     public static List<SafeAnimals> allSafeAnimals() {
         String sql = "SELECT  * FROM animals where type=:type";

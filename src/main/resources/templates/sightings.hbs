@@ -1,0 +1,16 @@
+{{#partial "content"}}
+    {{#if sightings}}
+        <h2 class="text-center">Locations with Sightings</h2>
+        <p>Here is a list of all the locations where animals have been spotted.<br> <br> Click on any location to view the animals</p>
+        <ul class="list-group">
+            {{#each sightings}}
+                <li class="list-group-item"><a href="/sightings/{{location}}/details">{{location}}</a></li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <h5 class="text-center">No animals sighted in any location yet.</h5>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}
