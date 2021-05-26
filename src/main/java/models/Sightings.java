@@ -5,6 +5,7 @@ import org.sql2o.*;
 
 
 import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -46,6 +47,10 @@ public class Sightings {
 
     public Timestamp getTimestamp() {
         return timestamp;
+    }
+
+    public String getReadableTimestamp(){
+        return DateFormat.getDateTimeInstance().format(getTimestamp());
     }
 
 
