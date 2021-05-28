@@ -50,4 +50,6 @@ public class EndangeredAnimals extends Animals{
                     .executeAndFetchFirst(EndangeredAnimals.class);
         }
     }
+
+
 }

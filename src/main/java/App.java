@@ -72,6 +72,12 @@ public class App {
             return new ModelAndView(model,"sighting-details.hbs");
         },new HandlebarsTemplateEngine());
 
+        get("/animals/endangered",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("endangered", EndangeredAnimals.allEndangeredAnimals());
+            return new ModelAndView(model,"endangered-animals.hbs");
+        },new HandlebarsTemplateEngine());
+
     }
 
 

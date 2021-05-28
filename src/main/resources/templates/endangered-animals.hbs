@@ -1,0 +1,27 @@
+{{#partial "content"}}
+    {{#if endangered}}
+        <table class="table text-center">
+            <h4 class="text-center">Endangered Species</h4>
+            <p>This is a list of the endangered species in our park and their health. Please protect them at all costs!</p>
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Health</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each endangered}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{age}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <h5 class="text-center">No Endangered animals recorded</h5>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}
