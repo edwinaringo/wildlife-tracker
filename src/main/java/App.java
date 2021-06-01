@@ -5,6 +5,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import spark.ModelAndView;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class App {
@@ -35,10 +36,10 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String rangerName = request.queryParams("rangerName");
             String animalName = request.queryParams("animalName");
-            String animalAge = request.queryParams("animalAge");
             String animalHealth = request.queryParams("animalHealth");
-            String location = request.queryParams("location");
             String animalType = request.queryParams("animalType");
+            String animalAge = request.queryParams("animalAge");
+            String location = request.queryParams("location");
 
             Ranger newRanger = new Ranger(rangerName);
             newRanger.save();
@@ -82,6 +83,22 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             model.put("safe", SafeAnimals.allSafeAnimals());
             return new ModelAndView(model,"safe-animals.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/rangers/:id/details",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(request.params("id"));
+            Ranger rangers = Ranger.find(id);
+            List<Sightings> rangerSightings = rangers.rangerSightings();
+            model.put("ranger",rangers);
+            model.put("sightings",rangerSightings);
+            return new ModelAndView(model,"ranger-details.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/rangers",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("rangers", Ranger.allRangers());
+            return new ModelAndView(model,"rangers.hbs");
         },new HandlebarsTemplateEngine());
 
 
