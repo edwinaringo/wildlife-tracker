@@ -78,6 +78,13 @@ public class App {
             return new ModelAndView(model,"endangered-animals.hbs");
         },new HandlebarsTemplateEngine());
 
+        get("/animals/safe",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("safe", SafeAnimals.allSafeAnimals());
+            return new ModelAndView(model,"safe-animals.hbs");
+        },new HandlebarsTemplateEngine());
+
+
     }
 
 

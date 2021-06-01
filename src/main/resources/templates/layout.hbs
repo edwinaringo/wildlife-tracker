@@ -3,16 +3,29 @@
     <html>
     <head>
         <title>{{#block "title"}}Parks and Recreation{{/block}}</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Acme|Bangers|Poppins&display=swap" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link rel='stylesheet' href='/main.css'>
     </head>
     <body>
-    <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-    <li class="nav-item" active><a class="nav-link" href="/sightings/new">Record a Sighting</a></li>
-    <li class="nav-item" active><a class="nav-link" href="/animals/endangered">Endangered Animals</a></li>
-    <li class="nav-item" active><a class="nav-link" href="/animals/safe">Safe Animals</a></li>
-    <li class="nav-item active"><a class="nav-link" href="/rangers">Rangers</a></li>
-    <li class="nav-item active"><a class="nav-link" href="/sightings">Sightings</a></li>
+    <ul class="navbar navbar-expand-lg navbar navbar-light" style="background-color:darkGreen;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item" active><a class="nav-link" href="/sightings/new">Record a Sighting</a></li>
+                <li class="nav-item" active><a class="nav-link" href="/animals/endangered">Endangered Animals</a></li>
+                <li class="nav-item" active><a class="nav-link" href="/animals/safe">Safe Animals</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/rangers">Rangers</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/sightings">Sightings</a></li>
+            </ul>
+        </ul>
+    </ul>
+
 
     <div class ="container">
         <div class="page-header">
